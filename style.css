@@ -38,7 +38,13 @@ body{
     font-size: 25px;
     border: none;
 }
-
+.topNav{
+    width: 80vw;
+    padding-bottom: 1%;
+    border-bottom: 3px solid #232323;
+    display: flex;
+    justify-content: space-between;
+}
 /* first landing page with including animations */
 .main .enter{
     width: 300vw;
@@ -56,7 +62,6 @@ body{
     left: 0;
     top: -200px;
 
-    transition: visibility .5s;
 }
 .startText:hover{
     text-shadow: 1px 2px #000000;
@@ -113,12 +118,22 @@ body{
 .identificationMid{
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    height: 85%;
+    align-items: flex-start;
+    height: 95%;
 }
-.identificationMid img{
+.identificationMid .ideimg{
     width: 50%;
     height: 70vh;
+    z-index: 1;
+}
+.bar{
+  top: 35%;
+  position: absolute;
+  left:55%;
+  opacity: 0;
+  width: 1vw;
+  transition: 1s;
+height: 10vh !important;
 }
 .identificationMid form {
     width: 40%;
@@ -151,13 +166,7 @@ input::placeholder{
     padding: 3%;
 }
 
-.topNav{
-    width: 100%;
-    padding-bottom: 1%;
-    border-bottom: 3px solid #232323;
-    display: flex;
-    justify-content: space-between;
-}
+
 .firstInfo{
     width: 220px;
     color: #626262;

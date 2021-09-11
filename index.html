@@ -14,7 +14,7 @@
 </head>
 <body>
     <div class="main">
-        <div class="start" >
+        <!-- <div class="start" >
             <img src="assets/Vector.svg" alt="" class="enter">
             <div class="enterDiv">
              <span class="startText">
@@ -22,27 +22,27 @@
                  დაწყება
              </span>
             </div>
-        </div>
-       <div class="identification">
+        </div> -->
         <div class="topNav">
             <img src="assets/redberry.svg" alt="">
             <span>1/4</span>
         </div>
+       <!-- <div class="identification">
         <div class="identificationMid">
          <form id="activeForm" autocomplete="off">
              <label for="name">
                  <span>სახელი*</span>
-                 <input  type="text"  class="firstInputs" name="name" id="name" required placeholder="გიგა">
+                 <input  type="text" data-name="სახელი"  class="firstInputs" name="name" id="name"  placeholder="გიგა">
                  <span class="missMatchAlert"></span>
              </label>
              <label for="surname">
                  <span>გვარი*</span>
-                 <input type="text"  name="surname" class="firstInputs" id="surname" required placeholder="გიორგაძე">
+                 <input type="text"  name="surname" data-name="გვარი" class="firstInputs" id="surname"  placeholder="გიორგაძე">
                  <span class="missMatchAlert"></span>
              </label>
              <label for="email">
                  <span>მეილი*</span>
-                 <input type="email" name="mail" id="mail" class="firstInputs" required placeholder="fbi@redberry.ge">
+                 <input type="email" name="mail" id="mail" class="firstInputs"  placeholder="fbi@redberry.ge">
                  <span class="missMatchAlert"></span>
              </label>
           <div class="firstInfo">
@@ -50,8 +50,9 @@
               <span>*-ით მონიშნული ველების შევსება სავალდებულოა</span>
           </div>
          </form>
-         <img src="assets/identification.png" alt="identification image">
-        </div>
+         <img src="assets/yellowBar.svg" class="bar" alt="">
+         <img src="assets/identification.png" class="ideimg" alt="identification image">
+        </div> -->
         <div class="botNav">
             <div class="botNavCenter">
             <i class="fas fa-chevron-left" ></i>
@@ -59,8 +60,10 @@
             <button id="btn" disabled type="submit" class="forward" form="activeForm"><i class="fas fa-chevron-right " ></i></button>
             </div>
         </div>
+       </div> 
+       <div class="aboutCovid">
+
        </div>
-     
     </div>
 <script src="index.js"></script>
 </body>
