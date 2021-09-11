@@ -106,35 +106,35 @@ body{
     transition:  .5s linear;
 }
 /* idenfication page with animations */
-.idenfication{
+.identification{
     width: 80vw;
     display: none;
 }
-.idenficationMid{
+.identificationMid{
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 85%;
 }
-.idenficationMid img{
+.identificationMid img{
     width: 50%;
     height: 70vh;
 }
-.idenficationMid form {
+.identificationMid form {
     width: 40%;
     display: flex;
     flex-direction: column;
     align-items: start;
     height:100%;
 }
-.idenficationMid label{
+.identificationMid label{
     display: flex;
     width: 100%;
     font-weight: 900;
     margin-bottom: 10%;
     flex-direction: column;
 }
-.idenficationMid label:first-of-type{
+.identificationMid label:first-of-type{
     margin-top: 8%;
     
 }

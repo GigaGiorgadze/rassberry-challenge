@@ -1,6 +1,6 @@
 const startText = document.querySelector('.startText')
 const start = document.querySelector('.start')
-const idenfication = document.querySelector('.idenfication')
+const identification = document.querySelector('.identification')
 const logo = document.querySelector('.enter')
 const sumbit = document.querySelector('.fa-chevron-right')
 const firstLabels = document.querySelectorAll('.firstLabels')
@@ -16,7 +16,7 @@ const enterTextAnim = () => {
     start.style.right = '15%'
     start.style.overflow = 'hidden'
     logo.style.opacity = '0'
-    idenfication.style.display = 'block'
+    identification.style.display = 'block'
 }
 
 const gettingTextInputs = () => {
