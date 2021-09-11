@@ -1,0 +1,172 @@
+/* lowkey globals */
+body{
+    margin: 0;
+    padding: 0;
+}
+.main{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #EAEAEA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.botNav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+.botNavCenter{
+    width: 15%;
+    display: flex;
+    justify-content: flex-end;
+}
+.botNavCenter .fas:hover{
+    cursor: pointer;
+}
+.fa-chevron-left{
+    display: none;
+}
+#btn{
+    width: auto;
+    height: auto;
+    background: transparent;
+    outline: none;
+    font-size: 25px;
+    border: none;
+}
+
+/* first landing page with including animations */
+.main .enter{
+    width: 300vw;
+    height: 300vh;
+    animation: logo 1s forwards linear;
+    transition: .5s;
+}
+.startText{
+    animation: start 0.5s forwards linear;
+    animation-delay: 1.2s;
+    font-size: 30px;
+    text-align: center;
+    color: black;
+    position: absolute;
+    left: 0;
+    top: -200px;
+
+    transition: visibility .5s;
+}
+.startText:hover{
+    text-shadow: 1px 2px #000000;
+    cursor: pointer;
+}
+.enterDiv{
+    width: 200px;
+    margin-top: 2%;
+
+    text-align: center;
+    overflow: hidden;
+    height: 100px;
+    position: relative;
+}
+.topNav{
+    font-family: 'Anonymous Pro', monospace;
+    font-size: 40px;
+}
+@keyframes logo {
+    0%{
+        width: 300vw;
+        height: 300vh;
+    }
+    100%{
+        width: 100px;
+        height: 100px;
+    }
+}
+@keyframes start {
+    from{
+        left: 0;
+        top: -200px;
+    }
+    to{
+        left: 0;
+        top: 0;
+    }
+}
+.start{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: static;
+    top: 30%;
+    right: 30%;
+    transition:  .5s linear;
+}
+/* idenfication page with animations */
+.idenfication{
+    width: 80vw;
+    display: none;
+}
+.idenficationMid{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85%;
+}
+.idenficationMid img{
+    width: 50%;
+    height: 70vh;
+}
+.idenficationMid form {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    height:100%;
+}
+.idenficationMid label{
+    display: flex;
+    width: 100%;
+    font-weight: 900;
+    margin-bottom: 10%;
+    flex-direction: column;
+}
+.idenficationMid label:first-of-type{
+    margin-top: 8%;
+    
+}
+input::placeholder{
+    color: black;
+}
+.firstInputs{
+    width: 100%;
+    box-sizing: border-box;
+    height: 40px;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid black;
+    padding: 3%;
+}
+
+.topNav{
+    width: 100%;
+    padding-bottom: 1%;
+    border-bottom: 3px solid #232323;
+    display: flex;
+    justify-content: space-between;
+}
+.firstInfo{
+    width: 220px;
+    color: #626262;
+}
+.firstInfo hr{
+    width: 70%;
+    margin-left: 0;
+}
+.missMatchAlert{
+    color: #F15524;
+    font-size: 13px;
+}
