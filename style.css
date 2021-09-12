@@ -14,7 +14,7 @@ body{
     flex-direction: column;
 }
 .botNav{
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     font-size: 25px;
@@ -42,7 +42,7 @@ body{
     width: 80vw;
     padding-bottom: 1%;
     border-bottom: 3px solid #232323;
-    display: none;
+    display: flex;
     font-family: 'Anonymous Pro', monospace;
     font-size: 40px;
     justify-content: space-between;
