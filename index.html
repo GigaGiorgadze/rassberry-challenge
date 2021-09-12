@@ -13,8 +13,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <img src="assets/yellowBar.svg" class="bar" alt="">
+
     <div class="main">
-        <!-- <div class="start" >
+        <div class="start" >
             <img src="assets/Vector.svg" alt="" class="enter">
             <div class="enterDiv">
              <span class="startText">
@@ -22,12 +24,12 @@
                  დაწყება
              </span>
             </div>
-        </div> -->
+        </div>
         <div class="topNav">
             <img src="assets/redberry.svg" alt="">
-            <span>1/4</span>
+            <span class="pageNum">1/4</span>
         </div>
-       <!-- <div class="identification">
+       <div class="identification">
         <div class="identificationMid">
          <form id="activeForm" autocomplete="off">
              <label for="name">
@@ -50,20 +52,54 @@
               <span>*-ით მონიშნული ველების შევსება სავალდებულოა</span>
           </div>
          </form>
-         <img src="assets/yellowBar.svg" class="bar" alt="">
          <img src="assets/identification.png" class="ideimg" alt="identification image">
-        </div> -->
-        <div class="botNav">
-            <div class="botNavCenter">
-            <i class="fas fa-chevron-left" ></i>
 
-            <button id="btn" disabled type="submit" class="forward" form="activeForm"><i class="fas fa-chevron-right " ></i></button>
-            </div>
-        </div>
+        </div> 
        </div> 
        <div class="aboutCovid">
-
+        <div class="aboutCovidQs">
+            <p>გაქვს გადატანილი Covid-19?*</p>
+            <label class="container">კი
+                <input type="radio" class="covidRadios" id="covidYes" name='covid' >
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">არა
+                <input type="radio" id="covidNo" class="covidRadios" name='covid'>
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">ახლა მაქვს
+                <input type="radio" id="covidNow" class="covidRadios" name='covid'>
+                <span class="checkmark"></span>
+              </label>
+              <div class="additionalFirst">
+                <p>ანტისხეულების ტესტი გაქვს გაკეთებული?</p>
+                <label class="container">კი
+                    <input type="radio" name="antibodies" class="covidRadios" id="antibodiesYes">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">არა
+                    <input type="radio" name="antibodies" class="covidRadios" id="antibodiesNO">
+                    <span class="checkmark"></span>
+                </label>
+              </div>
+              <div class="additionalSecondYes">
+                  <p>თუ გახსოვს, გთხოვ მიუთითე ტესტის მიახლოებითი რიცხვი და ანტისხეულების რაოდენობა*</p>
+                  <input placeholder="რიცხვი" class="inputsToCheck"  type="text" class="covidRadios" onfocus="(this.type = 'date')"  id="date">
+                  <input type="number" min="1" class="inputsToCheck" placeholder="ანტისხეულების რაოდენობა">
+              </div>
+              <div class="additionalSecondNo">
+                  <p>მიუთითე მიახლოებითი პერიოდი (დღე/თვე/წელე) როდის გქონდა Covid-19*</p>
+                  <input placeholder="დდ/თთ/წწ" type="text" class="inputsToCheck" onfocus="(this.type = 'date')"  id="date">
+              </div>
+        </div>
+        <img src="assets/vaccinate2.png" class="vacinateTwo" alt="">
        </div>
+       <div class="botNav">
+        <div class="botNavCenter">
+            <button id="btn" class="back"  ><i class="fas fa-chevron-left " ></i></button>
+        <button id="btn" disabled type="submit" class="forward" form="activeForm"><i class="fas fa-chevron-right " ></i></button>
+        </div>
+    </div>
     </div>
 <script src="index.js"></script>
 </body>
