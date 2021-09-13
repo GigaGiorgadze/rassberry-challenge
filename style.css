@@ -14,7 +14,7 @@ body{
     flex-direction: column;
 }
 .botNav{
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     font-size: 25px;
@@ -42,10 +42,13 @@ body{
     width: 80vw;
     padding-bottom: 1%;
     border-bottom: 3px solid #232323;
-    display: flex;
+    display: none;
     font-family: 'Anonymous Pro', monospace;
     font-size: 40px;
     justify-content: space-between;
+}
+.fas{
+    z-index: 20;
 }
 .container {
     display: block;
@@ -119,6 +122,21 @@ body{
     transition: 1s;
   height: 10vh ;
   }
+  .mainImg{
+    width: 50%;
+    height: 70vh;
+    z-index: 1;
+}
+a{
+    color: #1263ae;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+p{
+    margin-left: 5%;
+}
 /* first landing page with including animations */
 .main .enter{
     width: 300vw;
@@ -192,11 +210,7 @@ body{
     align-items: flex-start;
     height: 95%;
 }
-.identificationMid .ideimg{
-    width: 50%;
-    height: 70vh;
-    z-index: 1;
-}
+
 
 .identificationMid form {
     width: 40%;
@@ -282,5 +296,38 @@ input[type='radio']{
     display: none;
 }
 .additionalSecondNo{
+    display: none;
+}
+/* vaxx page */
+.vaxx{
+    display: none;
+    justify-content: center;
+    width: 80%;
+}
+.vaxxQs{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 50%;
+    font-weight: 600;
+    font-size: 19px;
+}
+.oneVaxOnlyPara{
+    width: 300px;
+    margin-left: 5%;
+}
+.vaxxYes{
+    display: none;
+}
+.oneVaxOnlyPara{
+    display: none;
+}
+.vaxxNo{
+    display: none;
+}
+.noPlansPara{
+    display: none;
+}
+.planningVaxxPara{
     display: none;
 }

@@ -16,7 +16,7 @@
     <img src="assets/yellowBar.svg" class="bar" alt="">
 
     <div class="main">
-        <!-- <div class="start" >
+        <div class="start" >
             <img src="assets/Vector.svg" alt="" class="enter">
             <div class="enterDiv">
              <span class="startText">
@@ -24,12 +24,12 @@
                  დაწყება
              </span>
             </div>
-        </div> -->
+        </div>
         <div class="topNav">
             <img src="assets/redberry.svg" alt="">
             <span class="pageNum">1/4</span>
         </div>
-       <!-- <div class="identification">
+       <div class="identification">
         <div class="identificationMid">
          <form id="activeForm" autocomplete="off">
              <label for="name">
@@ -52,7 +52,7 @@
               <span>*-ით მონიშნული ველების შევსება სავალდებულოა</span>
           </div>
          </form>
-         <img src="assets/identification.png" class="ideimg" alt="identification image">
+         <img src="assets/identification.png" class="mainImg" alt="identification image">
 
         </div> 
        </div> 
@@ -60,31 +60,31 @@
         <div class="aboutCovidQs">
             <p>გაქვს გადატანილი Covid-19?*</p>
             <label class="container">კი
-                <input type="radio" class="covidRadios" id="covidYes" name='covid' >
+                <input type="radio" class="radios" id="covidYes" name='covid' >
                 <span class="checkmark"></span>
               </label>
               <label class="container">არა
-                <input type="radio" id="covidNo" class="covidRadios" name='covid'>
+                <input type="radio" id="covidNo" class="radios" name='covid'>
                 <span class="checkmark"></span>
               </label>
               <label class="container">ახლა მაქვს
-                <input type="radio" id="covidNow" class="covidRadios" name='covid'>
+                <input type="radio" id="covidNow" class="radios" name='covid'>
                 <span class="checkmark"></span>
               </label>
               <div class="additionalFirst">
                 <p>ანტისხეულების ტესტი გაქვს გაკეთებული?</p>
                 <label class="container">კი
-                    <input type="radio" name="antibodies" class="covidRadios" id="antibodiesYes">
+                    <input type="radio" name="antibodies" class="radios" id="antibodiesYes">
                     <span class="checkmark"></span>
                 </label>
                 <label class="container">არა
-                    <input type="radio" name="antibodies" class="covidRadios" id="antibodiesNO">
+                    <input type="radio" name="antibodies" class="radios" id="antibodiesNO">
                     <span class="checkmark"></span>
                 </label>
               </div>
               <div class="additionalSecondYes">
                   <p>თუ გახსოვს, გთხოვ მიუთითე ტესტის მიახლოებითი რიცხვი და ანტისხეულების რაოდენობა*</p>
-                  <input placeholder="რიცხვი" class="inputsToCheck"  type="text" class="covidRadios" onfocus="(this.type = 'date')"  id="date">
+                  <input placeholder="რიცხვი" class="inputsToCheck"  type="text" class="radios" onfocus="(this.type = 'date')"  id="date">
                   <input type="number" min="1" class="inputsToCheck" placeholder="ანტისხეულების რაოდენობა">
               </div>
               <div class="additionalSecondNo">
@@ -92,8 +92,65 @@
                   <input placeholder="დდ/თთ/წწ" type="text" class="inputsToCheck" onfocus="(this.type = 'date')"  id="covidDate">
               </div>
         </div>
-        <img src="assets/vaccinate2.png" class="vacinateTwo" alt="">
-       </div> -->
+        <img src="assets/vaccinate2.png" class="mainImg" alt="">
+       </div>
+       <div class="vaxx">
+        <div class="vaxxQs">
+            <p>უკვე აცრილი ხარ?*</p>
+            <label class="container">კი
+                <input type="radio" class="radios" id="vaxxYesRadio" name='covid' >
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">არა
+                <input type="radio" class="radios" id="vaxxNoRadio" name='covid' >
+                <span class="checkmark"></span>
+              </label>
+              <div class="vaxxYes">
+                  <p>აირჩიე რომელ ეტაპზე ხარ:*</p>
+                  <label class="container">პირველი დოზა და დარეგისტრირებული ვარ მეორეზე
+                    <input type="radio" class="radios" id="secondRegistered" name='covid' >
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">სრულად ვაქცინირებული ვარ
+                    <input type="radio" class="radios" id="fullVaxxed" name='covid' >
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">პირველი დოზა და არ დავრეგისტრირებულვარ მეორეზე
+                    <input type="radio" class="radios" id="noSecondRegistered" name='covid' >
+                    <span class="checkmark"></span>
+                  </label>
+              </div>
+              <div class="vaxxNo">
+                  <p>რას ელოდები?</p>
+                  <label class="container">დარეგისტრირებული ვარ და ველოდები თარიღს
+                    <input type="radio" class="radios" id="registeredWaiting" name='covid' >
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">არ ვგეგმავ
+                    <input type="radio" class="radios" id="noPlans" name='covid' >
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">გადატანილი მაქვს და ვგეგმავ აცრას
+                    <input type="radio" class="radios" id="planningVaxx" name='covid' >
+                    <span class="checkmark"></span>
+                  </label>
+              </div>
+              <p class="oneVaxOnlyPara">
+                რომ არ გადადო, 
+                ბარემ ახლავე დარეგისტრირდი
+                <a href="https://booking.moh.gov.ge/" target="_blank">https://booking.moh.gov.ge/</a>
+              </p>
+              <p class="noPlansPara">
+                👉<a href="https://booking.moh.gov.ge/" target="_blank">https://booking.moh.gov.ge/</a>
+              </p>
+              <p class="planningVaxxPara">
+                ახალი პროტოკოლით კოვიდის გადატანიდან 1 თვის შემდეგ შეგიძლიათ ვაქცინის გაკეთება.
+                <br>
+                👉 რეგისტრაციის ლინკი - <a href="https://booking.moh.gov.ge/" target="_blank">https://booking.moh.gov.ge/</a>
+              </p>
+        </div>
+        <img src="assets/doctor.png" class="mainImg" alt="">
+       </div>
        <div class="botNav">
         <div class="botNavCenter">
             <button id="btn" class="back"  ><i class="fas fa-chevron-left " ></i></button>
