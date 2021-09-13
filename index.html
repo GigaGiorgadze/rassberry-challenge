@@ -16,7 +16,7 @@
     <img src="assets/yellowBar.svg" class="bar" alt="">
 
     <div class="main">
-        <div class="start" >
+        <!-- <div class="start" >
             <img src="assets/Vector.svg" alt="" class="enter">
             <div class="enterDiv">
              <span class="startText">
@@ -24,12 +24,12 @@
                  დაწყება
              </span>
             </div>
-        </div>
+        </div> -->
         <div class="topNav">
             <img src="assets/redberry.svg" alt="">
             <span class="pageNum">1/4</span>
         </div>
-       <div class="identification">
+       <!-- <div class="identification">
         <div class="identificationMid">
          <form id="activeForm" autocomplete="off">
              <label for="name">
@@ -55,8 +55,8 @@
          <img src="assets/identification.png" class="mainImg" alt="identification image">
 
         </div> 
-       </div> 
-       <div class="aboutCovid">
+       </div>  -->
+       <!-- <div class="aboutCovid">
         <div class="aboutCovidQs">
             <p>გაქვს გადატანილი Covid-19?*</p>
             <label class="container">კი
@@ -93,45 +93,45 @@
               </div>
         </div>
         <img src="assets/vaccinate2.png" class="mainImg" alt="">
-       </div>
-       <div class="vaxx">
+       </div> -->
+       <!-- <div class="vaxx">
         <div class="vaxxQs">
             <p>უკვე აცრილი ხარ?*</p>
             <label class="container">კი
-                <input type="radio" class="radios" id="vaxxYesRadio" name='covid' >
+                <input type="radio" class="radios" id="vaxxYesRadio" name='vaxx' >
                 <span class="checkmark"></span>
               </label>
               <label class="container">არა
-                <input type="radio" class="radios" id="vaxxNoRadio" name='covid' >
+                <input type="radio" class="radios" id="vaxxNoRadio" name='vaxx' >
                 <span class="checkmark"></span>
               </label>
               <div class="vaxxYes">
                   <p>აირჩიე რომელ ეტაპზე ხარ:*</p>
                   <label class="container">პირველი დოზა და დარეგისტრირებული ვარ მეორეზე
-                    <input type="radio" class="radios" id="secondRegistered" name='covid' >
+                    <input type="radio" class="radios" id="secondRegistered" name='vaxx' >
                     <span class="checkmark"></span>
                   </label>
                   <label class="container">სრულად ვაქცინირებული ვარ
-                    <input type="radio" class="radios" id="fullVaxxed" name='covid' >
+                    <input type="radio" class="radios" id="fullVaxxed" name='vaxx' >
                     <span class="checkmark"></span>
                   </label>
                   <label class="container">პირველი დოზა და არ დავრეგისტრირებულვარ მეორეზე
-                    <input type="radio" class="radios" id="noSecondRegistered" name='covid' >
+                    <input type="radio" class="radios" id="noSecondRegistered" name='vaxx' >
                     <span class="checkmark"></span>
                   </label>
               </div>
               <div class="vaxxNo">
                   <p>რას ელოდები?</p>
                   <label class="container">დარეგისტრირებული ვარ და ველოდები თარიღს
-                    <input type="radio" class="radios" id="registeredWaiting" name='covid' >
+                    <input type="radio" class="radios" id="registeredWaiting" name='vaxx' >
                     <span class="checkmark"></span>
                   </label>
                   <label class="container">არ ვგეგმავ
-                    <input type="radio" class="radios" id="noPlans" name='covid' >
+                    <input type="radio" class="radios" id="noPlans" name='vaxx' >
                     <span class="checkmark"></span>
                   </label>
                   <label class="container">გადატანილი მაქვს და ვგეგმავ აცრას
-                    <input type="radio" class="radios" id="planningVaxx" name='covid' >
+                    <input type="radio" class="radios" id="planningVaxx" name='vaxx' >
                     <span class="checkmark"></span>
                   </label>
               </div>
@@ -150,6 +150,70 @@
               </p>
         </div>
         <img src="assets/doctor.png" class="mainImg" alt="">
+       </div> -->
+       <div class="final">
+         <form class="finalForm">
+           <p>რედბერის მთავარი ღირებულება ჩვენი გუნდის თითოეული წევრია. გარემო, რომელსაც ჩვენი თანამშრომლები ქმნით 
+            ბევრისთვის არის და ყოფილა წლების განმავლობაში ერთად მიზნებისთვის ბრძოლის მიზეზი, 
+            ბევრისთვის კი - ჩვენთან გადმოსვლის. </p>
+            <p>პანდემიის პერიოდში ერთმანეთსაც იშვიათად ვნახულობთ 
+              პირისპირ და ყოველდღიური კომუნიკაციაც გაიშვიათდა.</p>
+            <span class="finalQuestionSpans">
+              რა სიხშირით შეიძლება გვქონდეს საერთო არაფორმალური ონლაინ შეხვედრები, სადაც ყველა სურვილისამებრ ჩაერთვება?*
+            </span>
+            <label class="container">კვირაში ორჯერ
+              <input type="radio" class="radios" id="planningVaxx" required name='meeting' >
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">კვირაში ერთხელ
+              <input type="radio" class="radios" id="planningVaxx" name='meeting' >
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">ორ კვირაში ერთხელ
+              <input type="radio" class="radios" id="planningVaxx" name='meeting' >
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">თვეში ერთხელ
+              <input type="radio" class="radios" id="planningVaxx" name='meeting' >
+              <span class="checkmark"></span>
+            </label>
+            <span class="finalQuestionSpans">კვირაში რამდენი დღე ისურვებდი ოფისიდან მუშაობას?*</span>
+            <div class="numRadios">
+              <label class="container">0
+                <input type="radio" class="radios" id="planningVaxx" name='office' >
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">1
+                <input type="radio" class="radios" id="planningVaxx" name='office' >
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">2
+                <input type="radio" class="radios" id="planningVaxx" name='office' >
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">3
+                <input type="radio" class="radios" id="planningVaxx" name='office' >
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">4
+                <input type="radio" class="radios" id="planningVaxx" name='office' >
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">5
+                <input type="radio" class="radios" id="planningVaxx" name='office' >
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <span class="finalQuestionSpans">რას ფიქრობ ფიზიკურ შეკრებებზე?</span>
+            <textarea name="contact" id="contact"></textarea>
+            <span class="finalQuestionSpans">
+              რას ფიქრობ არსებულ გარემოზე: <br> რა მოგწონს, რას დაამატებდი, რას შეცვლიდი?
+            </span>
+            <textarea name="" id=""></textarea>
+
+            <input type="submit" value="დასრულება" id="finish">
+         </form>
+         <img src="./assets/bike2 2.png" class="mainImg" alt="">
        </div>
        <div class="botNav">
         <div class="botNavCenter">

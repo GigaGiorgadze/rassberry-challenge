@@ -14,7 +14,7 @@ body{
     flex-direction: column;
 }
 .botNav{
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     font-size: 25px;
@@ -42,9 +42,10 @@ body{
     width: 80vw;
     padding-bottom: 1%;
     border-bottom: 3px solid #232323;
-    display: none;
+    display: flex;
     font-family: 'Anonymous Pro', monospace;
     font-size: 40px;
+    margin-bottom: 2%;
     justify-content: space-between;
 }
 .fas{
@@ -55,6 +56,7 @@ body{
     position: relative;
     padding-left: 30px;
     cursor: pointer;
+
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -73,7 +75,7 @@ body{
   /* Create a custom radio button */
   .checkmark {
     position: absolute;
-    top: 6px;
+    top: 4.5px;
     left: 5px ;
     height: 12px;
     width: 12px;
@@ -331,3 +333,42 @@ input[type='radio']{
 .planningVaxxPara{
     display: none;
 }
+/* last page */
+textarea {
+    resize: none;
+    display: block;
+    height: 150px;
+    width: 350px;
+    flex-shrink: 0;
+  }
+  .final{
+      display: flex;
+      width: 80%;
+  }
+  /* if i utilize flexbox here everything gets screwed for some reason? textarea is causing content to overflow/hide and i can't find way around it :( */
+  .finalForm{
+      width: 50%;
+      height: 70vh;
+      cursor: grab;
+    overflow: auto;
+  }
+  .finalForm::-webkit-scrollbar{
+      display: none;
+  }
+  .finalForm
+  .numRadios .checkmark {
+    top: 2px;
+  }
+  .finalForm span{
+      display: block;
+      
+  }
+  #finish{
+      float: right;
+  }
+  .finalForm p{
+      margin-left: 0;
+  }
+  .finalQuestionSpans{
+      margin: 4% 0;
+  }
