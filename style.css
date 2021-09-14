@@ -431,3 +431,11 @@ textarea {
       transform: translate(150%, -50%);
       width: 30px;
   }
+  .lastErorr{
+      display: none;
+      text-decoration: none;
+      color: #F15524;
+      font-size: 13px;
+      justify-self: end;
+      margin-right: 5%;
+  }

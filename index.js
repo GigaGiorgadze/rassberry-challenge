@@ -33,18 +33,19 @@ const FinalBackBtn = document.querySelector('.FinalBack')
 const tyH1 = document.querySelector('.ty')
 const topStar = document.querySelector('.TopStar')
 const BotStar = document.querySelector('.BotStar')
+const lastErorr = document.querySelector('.lastErorr')
 let isDown = false
 let startY;
 let scrollTop;
-console.log(meetingRadios)
 let currentPage = "load"
 let covidPageCompleted = false
-let textState = false
+let surnameState = false
+let NameState = false
 let mailState = false
 let covidState = 0;
 // animation that triggers when u start survery
 const enterTextAnim = () => {
- 
+    // time out is needed because if i don't use it transition doesn't trigger but using timeout transition triggers correctly
     setTimeout(function(){
         bar.style.opacity = 1
         bar.style.width = '30vw'
@@ -69,69 +70,56 @@ const enterTextAnim = () => {
     back.style.display = 'none'
     botNavCenter.style.justifyContent = 'flex-end'
 }
-
-const gettingTextInputs = () => {
-    const inputs = document.querySelectorAll('.firstInputs')
-    inputs.forEach(input => input.addEventListener('keyup', e =>{
-        inputPatternCheck(input,e)
-    } ))
-    inputs.forEach(input => input.addEventListener('change', (e) => {
-        if(e.target.value == ''){
-            nameState = false
-        }
-    }))
-}
-const inputPatternCheck = (input, e) => {
-    let MissMatchAlert =  e.target.nextElementSibling
-    
-    if (e.keyCode > 31 && (e.keyCode < 65 || e.keyCode > 90) &&
-    (e.keyCode < 97 || e.keyCode > 122)) {
-        MissMatchAlert.innerText = `${e.target.dataset.name}ს ველი უნდა შეიცავდეს მხოლოდ ანბანის ასოებს`
-        textState = false
-    } else if(e.target.value.length < 3 ){
-        MissMatchAlert.innerText = `${e.target.dataset.name}ს ველი უნდა შედგებოდეს მინიმუმ 3 სიმბოლოსგან`
-        textState = false
-    }else if(e.target.value.length > 256){
-        MissMatchAlert.innerText = `${e.target.dataset.name}ს ველი უნდა შედგებოდეს მაქსიმუმ 255 სიმბოლოსგან`
-        textState = false
-    }else{
-        MissMatchAlert.innerText = ''
-        textState = true
-    }
-    if(textState && mailState){
-        forward.disabled = false
-    }else{
-        forward.disabled = true
-    }
-
-}
-const emailValidity = () =>{
+// validating inputs on first page
+const inputPatternCheck = (e) => {
+    let MissMatchAlertName =  e.target.querySelector('input').nextElementSibling
+    let MissMatchAlertSurname = e.target.querySelectorAll('input')[1].nextElementSibling
+    let name = e.target.querySelector('input')
+    let surname = e.target.querySelectorAll('input')[1]
+    console.log({surname, MissMatchAlertSurname})
     const email = document.querySelector('#mail')
-    email.addEventListener('keyup', e => {
-    let MissMatchAlert =  e.target.nextElementSibling
+    let MailMissMatchAlert =  email.nextElementSibling
+
+    let numRegex = /\d/
+    if(numRegex.test(name.value)) {
+    MissMatchAlertName.innerText = `${name.dataset.name}ს ველი უნდა შეიცავდეს მხოლოდ ანბანის ასოებს`
+    NameState = false
+    }else if(name.value.length < 3){
+        MissMatchAlertName.innerText = `${name.dataset.name}ს ველი უნდა შედგებოდეს მინიმუმ 3 სიმბოლოსგან`
+        NameState = false
+    }else if(name.value.length >= 255){
+        MissMatchAlertName.innerText = `${name.dataset.name}ს  ველი უნდა შედგებოდეს მაქსიმუმ 255 სიმბოლოსგან`
+        NameState = false
+    }else{
+        MissMatchAlertName.innerText = '';
+        NameState = true
+    }
+    if(numRegex.test(surname.value)){
+        MissMatchAlertSurname.innerText = `${surname.dataset.name}ს ველი უნდა შეიცავდეს მხოლოდ ანბანის ასოებს`
+        surnameState = false
+    }else if(surname.value.length < 3 || surname.value.length == ''){
+        MissMatchAlertSurname.innerText = `${surname.dataset.name}ს ველი უნდა შედგებოდეს მინიმუმ 3 სიმბოლოსგან`
+        surnameState = false
+    }else if(surname.value.length >= 255){
+        MissMatchAlertSurname.innerText = `${surname.dataset.name}ს  ველი უნდა შედგებოდეს მაქსიმუმ 255 სიმბოლოსგან`
+        surnameState = false
+    }else{
+        MissMatchAlertSurname.innerText = ''
+        surnameState = true
+
+    }
     if(email.value.endsWith('@redberry.ge')){
-        MissMatchAlert.innerText = ''
+        MailMissMatchAlert.innerText = ''
         mailState = true
     }else if(email.validity.typeMismatch){
-        MissMatchAlert.innerText = 'თქვენ მიერ შეყვანილი მეილი არასწორია'
+        MailMissMatchAlert.innerText = 'თქვენ მიერ შეყვანილი მეილი არასწორია'
         mailState = false
     }else{
-        MissMatchAlert.innerText = 'გთხოვთ დარეგისტრირდეთ Redberry-ს მეილით (youremail@redberry.ge)'
+        MailMissMatchAlert.innerText = 'გთხოვთ დარეგისტრირდეთ Redberry-ს მეილით (youremail@redberry.ge)'
         mailState = false
-    }
-    if(mailState && textState){
-        forward.disabled = false
-    }else{
-        forward.disabled = true
-
-    }   
-    })
-    email.addEventListener('change', () => {
-        if(email.value == ''){
-            mailState = false
-        }
-    })
-} 
+    }  
+}
+// animation that triggers when u go to second page both back and forward
 const summonSecondPage = () =>{
     identification.style.display = 'none'
     vaxx.style.display = 'none'
@@ -151,27 +139,24 @@ const summonSecondPage = () =>{
     pageNum.innerText = '2/4'
     forward.type = 'button'
 }
+
 const pageBack = () => {
     if(currentPage == 'second'){
     forward.disabled = false
+    forward.type = 'submit'
     enterTextAnim()
     }else if(currentPage == 'third'){
         summonSecondPage()
         forward.disabled = false
     }
 }
-const covidYesCheck = e =>{
-    if(e.target.checked){
-        additionalFirst.style.display = 'block'
-        forward.disabled = true
-    }
-}
+// massive function that checks which radio button was clicked on 2nd and 3rd page and reveals other check boxes accordingly
 const radiosCheck = e =>{
     if(e.target.id == 'covidYes'){
-        covidYesCheck(e)
+        additionalFirst.style.display = 'block'
+        forward.disabled = true
     }else if(e.target.id == 'covidNo' || e.target.id == 'covidNow'){
         forward.disabled = false
-        console.log('heelo')
         additionalFirst.style.display = 'none'
         additionalSecondYes.style.display = 'none'
         additionalSecondNo.style.display = 'none'
@@ -220,14 +205,14 @@ const radiosCheck = e =>{
         planningVaxxPara.style.display = 'none'
     }
 }
-inputsToCheckFunc = e =>{
+// this checks 3 inputs on second page about antiboides
+const inputsToCheckFunc = e =>{
     if(e.target.id == 'covidDate'){
         covidState = true
         forward.disabled = false
     }else if(e.target.value != '' && e.target.id != 'covidDate'){
         covidState += 1
         if(covidState>=2){
-            console.log(covidState)
             forward.disabled = false
         }
     } 
@@ -242,14 +227,15 @@ const thirdPageLoad = () =>{
         bar.style.height = '20vh'
         bar.style.top = '17%'
         bar.style.left = '49%'
-        bar.querySelector('img').src = 'assets/star.svg' 
+
+        bar.innerHTML = '<img src="assets/star.svg"  alt="">'
     }, 50);
     forward.disabled = true
     currentPage = 'third'
     pageNum.innerText = '3/4'
     botNav.style.display = 'flex'
 }
-
+// button that handles going forward besides first page 
 const pageForward = () =>{
     if(currentPage == 'second'){
         thirdPageLoad()
@@ -257,7 +243,9 @@ const pageForward = () =>{
         lastPageLoad()
     }
 }
+// animation that plays on fourth page about company 
 const lastPageLoad = () => {
+   
     setTimeout(function(){
         bar.style.width = '20vw'
         bar.style.height = '20vh'
@@ -276,7 +264,14 @@ const lastPageLoad = () => {
 }
 const thankYouScreen = e =>{
     e.preventDefault()
-    let barSvgPath = bar.querySelector("svg").querySelector('path')
+    let radioArray = []
+    
+    const lastRadios = e.target.querySelectorAll('input[type="radio"]')
+    // i couldn't find way how to delete else stament from ternery operator
+    lastRadios.forEach(radio => radio.validity.valueMissing ? radioArray.push(radio.validity.valueMissing) : true)
+  
+    if(radioArray.length == 0){
+        let barSvgPath = bar.querySelector("svg").querySelector('path')
     setTimeout(() => {
         bar.style.width = '300vw'
         bar.style.height = '300vh'
@@ -284,6 +279,7 @@ const thankYouScreen = e =>{
         bar.style.left = '-100%'
         bar.style.zIndex = 2
     }, 50);
+    // im nesting so many timeouts because i want animations to be delayed and not activate at same time
     setTimeout(() => {
         barSvgPath.style.fill = '#232323'
         setTimeout(() => {
@@ -297,11 +293,22 @@ const thankYouScreen = e =>{
             }, 300);
         }, 500);
     }, 500);
+    }else{
+        console.log(lastRadios)
+        console.log(radioArray.length)
+        lastErorr.style.display = 'inline'
+        return 
+    }
+        
+    
 }
 startText.addEventListener('click',enterTextAnim)
+// submuting first form on main page
 activeForm.addEventListener('submit', e =>{
     e.preventDefault()
-    if(mailState && textState){
+    inputPatternCheck(e)
+
+    if(mailState && NameState && surnameState ){
         summonSecondPage()
     }else{
         return 
@@ -309,29 +316,38 @@ activeForm.addEventListener('submit', e =>{
 })
 back.addEventListener('click', pageBack)
 forward.addEventListener('click', pageForward)
-
+// data and number inputs on second page
 inputsToCheck.forEach(input => input.addEventListener('change', e => inputsToCheckFunc(e)))
+// buttons on third and second page
 radios.forEach(radio => radio.addEventListener('click', e => radiosCheck(e)))
-gettingTextInputs()
-emailValidity()
 scroll.addEventListener('mousedown', (e) => {
+    // so later we know if user is actually holding mouse
     isDown = true
+    // where user clicked first time
     startY = e.pageY - scroll.offsetTop
+    // currect position of scroll inside form
     scrollTop = scroll.scrollTop
 })
 scroll.addEventListener('mouseleave', () => {
+    // so scroll stops when user leaves form
     isDown = false
 })
 scroll.addEventListener('mouseup', () => {
+    // so i know that user isn't holding mouse anymore
     isDown = false
 })
 scroll.addEventListener('mousemove', (e) => {
     if(!isDown) return
+    // where cursor is inside form when user is moving it
     const y = e.pageY - scroll.offsetTop
-    const walk = y - startY
+    // how far is mouse from user's starting position
+    const walk = (y - startY) * 2
+    // scrools page based on walk and where scrool was at start
     scroll.scrollTop = scrollTop + (-walk)
 })
+// last form submit
 finalForm.addEventListener('submit',(e) => {thankYouScreen(e)})
+// back button on last page i couldn't use the same one because this one was supposed to be inside form :/
 FinalBackBtn.addEventListener('click', () => {
     thirdPageLoad()
     forward.disabled = false

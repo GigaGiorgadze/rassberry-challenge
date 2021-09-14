@@ -37,20 +37,20 @@
         </div>
        <div class="identification">
         <div class="identificationMid">
-         <form id="activeForm" autocomplete="off">
+         <form id="activeForm" novalidate>
              <label for="name">
                  <span>სახელი*</span>
-                 <input  type="text" data-name="სახელი"  class="firstInputs" name="name" id="name"  placeholder="გიგა">
+                 <input  type="text" data-name="სახელი"  class="firstInputs"  name="name" id="name"  placeholder="გიგა">
                  <span class="missMatchAlert"></span>
              </label>
              <label for="surname">
                  <span>გვარი*</span>
-                 <input type="text"  name="surname" data-name="გვარი" class="firstInputs" id="surname"  placeholder="გიორგაძე">
+                 <input type="text"  name="surname" data-name="გვარი"  class="firstInputs" id="surname"  placeholder="გიორგაძე">
                  <span class="missMatchAlert"></span>
              </label>
              <label for="email">
                  <span>მეილი*</span>
-                 <input type="email" name="mail" id="mail" class="firstInputs"  placeholder="fbi@redberry.ge">
+                 <input type="email" name="mail" id="mail" class="firstInputs"   placeholder="fbi@redberry.ge">
                  <span class="missMatchAlert"></span>
              </label>
           <div class="firstInfo">
@@ -104,11 +104,11 @@
         <div class="vaxxQs">
             <p>უკვე აცრილი ხარ?*</p>
             <label class="container">კი
-                <input type="radio" class="radios" id="vaxxYesRadio" name='vaxx' >
+                <input type="radio" class="radios" id="vaxxYesRadio" name='vaxxYesNo' >
                 <span class="checkmark"></span>
               </label>
               <label class="container">არა
-                <input type="radio" class="radios" id="vaxxNoRadio" name='vaxx' >
+                <input type="radio" class="radios" id="vaxxNoRadio" name='vaxxYesNo' >
                 <span class="checkmark"></span>
               </label>
               <div class="vaxxYes">
@@ -158,7 +158,7 @@
         <img src="assets/doctor.png" class="mainImg" alt="">
        </div>
        <div class="final">
-         <form class="finalForm">
+         <form class="finalForm" novalidate>
            <p>რედბერის მთავარი ღირებულება ჩვენი გუნდის თითოეული წევრია. გარემო, რომელსაც ჩვენი თანამშრომლები ქმნით 
             ბევრისთვის არის და ყოფილა წლების განმავლობაში ერთად მიზნებისთვის ბრძოლის მიზეზი, 
             ბევრისთვის კი - ჩვენთან გადმოსვლის. </p>
@@ -216,6 +216,7 @@
               რას ფიქრობ არსებულ გარემოზე: <br> რა მოგწონს, რას დაამატებდი, რას შეცვლიდი?
             </span>
             <textarea name="" id=""></textarea>
+            <i class="lastErorr">გთხოვთ ყველა სავალდებულო ველი შეავსოთ</i>
 
             <input type="submit" value="დასრულება" id="finish">
             <button id="btn" class="FinalBack"  ><i class="fas fa-chevron-left " ></i></button>
@@ -225,7 +226,7 @@
        <div class="botNav">
         <div class="botNavCenter">
             <button id="btn" class="back"  ><i class="fas fa-chevron-left " ></i></button>
-        <button id="btn" disabled type="submit" class="forward" form="activeForm"><i class="fas fa-chevron-right " ></i></button>
+        <button id="btn"  type="submit" class="forward" form="activeForm"><i class="fas fa-chevron-right " ></i></button>
         </div>
     </div>
     </div>
