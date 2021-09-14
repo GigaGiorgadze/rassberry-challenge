@@ -264,10 +264,13 @@ const lastPageLoad = () => {
 }
 const thankYouScreen = e =>{
     e.preventDefault()
+    // i had to use this way because for some reason just checking value missing wasn't working on group of radio buttons so i had to find and use this way i know its not the best :/
     let radioArray = []
     
     const lastRadios = e.target.querySelectorAll('input[type="radio"]')
     // i couldn't find way how to delete else stament from ternery operator
+    // what this does it pushes values of validity missing to an array so i can later check if all radio groups are filled out
+    // so if its not 0 then one of the group isn't check :/ not the best approach but oh well
     lastRadios.forEach(radio => radio.validity.valueMissing ? radioArray.push(radio.validity.valueMissing) : true)
   
     if(radioArray.length == 0){
