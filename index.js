@@ -27,10 +27,16 @@ const noPlansPara = document.querySelector('.noPlansPara')
 const planningVaxxPara = document.querySelector('.planningVaxxPara')
 const scroll = document.querySelector('.finalForm')
 const final = document.querySelector('.final')
+const meetingRadios = document.getElementsByName('meeting')
+const finalForm = document.querySelector('.finalForm')
+const FinalBackBtn = document.querySelector('.FinalBack')
+const tyH1 = document.querySelector('.ty')
+const topStar = document.querySelector('.TopStar')
+const BotStar = document.querySelector('.BotStar')
 let isDown = false
 let startY;
 let scrollTop;
-
+console.log(meetingRadios)
 let currentPage = "load"
 let covidPageCompleted = false
 let textState = false
@@ -43,7 +49,7 @@ const enterTextAnim = () => {
         bar.style.opacity = 1
         bar.style.width = '30vw'
         bar.style.height = '10vh'
-        bar.src = 'assets/yellowBar.svg'
+        bar.querySelector('img').src = 'assets/yellowBar.svg' 
         start.style.top = '35%'
         start.style.right = '15%'
         bar.style.top = '35%'
@@ -136,7 +142,7 @@ const summonSecondPage = () =>{
         bar.style.height = '20vh'
         bar.style.top = '37%'
         bar.style.left = '50%'
-        bar.src = 'assets/red circle.svg'
+        bar.querySelector('img').src = 'assets/red circle.svg' 
     }, 50);
     forward.disabled = true
     back.style.display = 'block'
@@ -151,6 +157,7 @@ const pageBack = () => {
     enterTextAnim()
     }else if(currentPage == 'third'){
         summonSecondPage()
+        forward.disabled = false
     }
 }
 const covidYesCheck = e =>{
@@ -229,16 +236,18 @@ inputsToCheckFunc = e =>{
 const thirdPageLoad = () =>{
     aboutCovid.style.display = 'none'
     vaxx.style.display = 'flex' 
+    final.style.display = 'none'
     setTimeout(function(){
         bar.style.width = '20vw'
         bar.style.height = '20vh'
         bar.style.top = '17%'
-        bar.style.left = '49.5%'
-        bar.src = 'assets/star.svg'
+        bar.style.left = '49%'
+        bar.querySelector('img').src = 'assets/star.svg' 
     }, 50);
     forward.disabled = true
     currentPage = 'third'
     pageNum.innerText = '3/4'
+    botNav.style.display = 'flex'
 }
 
 const pageForward = () =>{
@@ -252,12 +261,42 @@ const lastPageLoad = () => {
     setTimeout(function(){
         bar.style.width = '20vw'
         bar.style.height = '20vh'
-        bar.style.top = '23%'
+        bar.style.top = '25%'
         bar.style.left = '51%'
-        bar.src = 'assets/heart.svg'
+        bar.querySelector('img').remove()
+        bar.innerHTML = '<svg width="196" height="173" viewBox="0 0 196 173" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M48.5005 12C75.7005 9.6 94.5005 28.3333 100.501 38C110.501 1.5 143.5 0.5 161.5 0.5C179.5 0.5 203.5 22 192.5 69C183.7 106.6 144.5 153.667 126 172.5C87.6668 153.5 9.30051 107.3 2.50051 74.5C-5.99949 33.5 14.5005 15 48.5005 12Z" fill="#F39494"/></svg>'
+
     }, 50);
+    currentPage = 'fourth'
     vaxx.style.display = 'none'
     final.style.display = 'flex'
+    pageNum.innerText = '4/4'
+    botNav.style.display = 'none'
+    
+}
+const thankYouScreen = e =>{
+    e.preventDefault()
+    let barSvgPath = bar.querySelector("svg").querySelector('path')
+    setTimeout(() => {
+        bar.style.width = '300vw'
+        bar.style.height = '300vh'
+        bar.style.top = '-100%'
+        bar.style.left = '-100%'
+        bar.style.zIndex = 2
+    }, 50);
+    setTimeout(() => {
+        barSvgPath.style.fill = '#232323'
+        setTimeout(() => {
+            tyH1.style.display = 'block'
+            tyH1.style.zIndex = 5
+            topStar.style.display = 'inline'
+            BotStar.style.display = 'inline'            
+            setTimeout(() => {
+                topStar.style.transform = 'translate(-300%, -200%)'
+                BotStar.style.transform = 'translate(200%, 150%)'
+            }, 300);
+        }, 500);
+    }, 500);
 }
 startText.addEventListener('click',enterTextAnim)
 activeForm.addEventListener('submit', e =>{
@@ -290,6 +329,10 @@ scroll.addEventListener('mousemove', (e) => {
     if(!isDown) return
     const y = e.pageY - scroll.offsetTop
     const walk = y - startY
-    console.log(walk)
     scroll.scrollTop = scrollTop + (-walk)
+})
+finalForm.addEventListener('submit',(e) => {thankYouScreen(e)})
+FinalBackBtn.addEventListener('click', () => {
+    thirdPageLoad()
+    forward.disabled = false
 })
