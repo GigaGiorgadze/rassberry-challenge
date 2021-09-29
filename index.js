@@ -76,7 +76,6 @@ const inputPatternCheck = (e) => {
     let MissMatchAlertSurname = e.target.querySelectorAll('input')[1].nextElementSibling
     let name = e.target.querySelector('input')
     let surname = e.target.querySelectorAll('input')[1]
-    console.log({surname, MissMatchAlertSurname})
     const email = document.querySelector('#mail')
     let MailMissMatchAlert =  email.nextElementSibling
 
@@ -297,8 +296,6 @@ const thankYouScreen = e =>{
         }, 500);
     }, 500);
     }else{
-        console.log(lastRadios)
-        console.log(radioArray.length)
         lastErorr.style.display = 'inline'
         return 
     }
