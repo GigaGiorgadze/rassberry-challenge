@@ -19,5 +19,4 @@ you can view live page hosted on github at following URL - https://gigagiorgadze
 ### useful resources
 i learned how to make element scroll on drag from this wonderful video from WesBos - https://www.youtube.com/watch?v=C9EWifQ5xqA&ab_channel=WesBos
 ### TO DO
-1) refactor code to make it look cleaner and spread into different components also change massive if/else statments into more well structured seperate functions
-2)remake code later down the line using Angular/react/both to see what would be advantages of using them fairly large project 🤔🤔 instead of using vainilla JS
+remake code later down the line using Angular/react/both to see what would be advantages of using them fairly large project 🤔🤔 instead of using vainilla JS
