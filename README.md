@@ -1,4 +1,4 @@
-# rassberry-challenge
+# redberry-challenge
 challenge for redberry's intership 
 
 # what is this page about?
